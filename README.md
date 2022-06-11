@@ -10,25 +10,25 @@
         <img alt="GitHub" src="https://img.shields.io/github/license/ymcui/Chinese-BERT-wwm.svg?color=blue&style=flat-square">
     </a>
 </p>
-在自然语言处理领域中，预训练语言模型（Pre-trained Language Models）已成为非常重要的基础技术。为了进一步促进中文信息处理的研究发展，我们发布了基于全词遮罩（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-ext-large, RBT3, RBTL3。  
 
-**[Pre-Training with Whole Word Masking for Chinese BERT](https://arxiv.org/abs/1906.08101)**  
-Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping Hu
+在自然语言处理领域中，预训练语言模型（Pre-trained Language Models）已成为非常重要的基础技术。为了进一步促进中文信息处理的研究发展，我们发布了基于全词掩码（Whole Word Masking）技术的中文预训练模型BERT-wwm，以及与此技术密切相关的模型：BERT-wwm-ext，RoBERTa-wwm-ext，RoBERTa-wwm-ext-large, RBT3, RBTL3等。  
+
+- **[Pre-Training with Whole Word Masking for Chinese BERT](https://ieeexplore.ieee.org/document/9599397)**  
+- *Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang*
+- Published in *IEEE/ACM Transactions on Audio, Speech, and Language Processing (TASLP)*
 
 本项目基于谷歌官方BERT：https://github.com/google-research/bert
 
-其他相关资源：
+----
 
-- 中文MacBERT预训练模型：https://github.com/ymcui/MacBERT
-- 中文ELECTRA预训练模型：https://github.com/ymcui/Chinese-ELECTRA
-- 中文XLNet预训练模型：https://github.com/ymcui/Chinese-XLNet
-- 知识蒸馏工具TextBrewer：https://github.com/airaria/TextBrewer
-- 模型裁剪工具TextPruner：https://github.com/airaria/TextPruner
+[中文MacBERT](https://github.com/ymcui/MacBERT) | [中文ELECTRA](https://github.com/ymcui/Chinese-ELECTRA) | [中文XLNet](https://github.com/ymcui/Chinese-XLNet) | [知识蒸馏工具TextBrewer](https://github.com/airaria/TextBrewer) | [模型裁剪工具TextPruner](https://github.com/airaria/TextPruner)
 
 查看更多哈工大讯飞联合实验室（HFL）发布的资源：https://github.com/ymcui/HFL-Anthology
 
 ## 新闻
-**2021/12/17 哈工大讯飞联合实验室推出模型裁剪工具包TextPruner。查看：https://github.com/airaria/TextPruner**
+**2022/3/30 我们开源了一种新预训练模型PERT。查看：https://github.com/ymcui/PERT**
+
+2021/12/17 哈工大讯飞联合实验室推出模型裁剪工具包TextPruner。查看：https://github.com/airaria/TextPruner
 
 2021/10/24 哈工大讯飞联合实验室发布面向少数民族语言的预训练模型CINO。查看：https://github.com/ymcui/Chinese-Minority-PLM
 
@@ -36,12 +36,12 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 2021/1/27 所有模型已支持TensorFlow 2，请通过transformers库进行调用或下载。https://huggingface.co/hfl
 
+<details>
+<summary>历史新闻</summary>
 2020/9/15 我们的论文["Revisiting Pre-Trained Models for Chinese Natural Language Processing"](https://arxiv.org/abs/2004.13922)被[Findings of EMNLP](https://2020.emnlp.org)录用为长文。
 
 2020/8/27 哈工大讯飞联合实验室在通用自然语言理解评测GLUE中荣登榜首，查看[GLUE榜单](https://gluebenchmark.com/leaderboard)，[新闻](http://dwz.date/ckrD)。
 
-<details>
-<summary>历史新闻</summary>
 2020/3/23 本目录发布的模型已接入[飞桨PaddleHub](https://github.com/PaddlePaddle/PaddleHub)，查看[快速加载](#快速加载)
 
 2020/3/11 为了更好地了解需求，邀请您填写[调查问卷](https://wj.qq.com/s2/5637766/6281)，以便为大家提供更好的资源。
@@ -104,6 +104,8 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 * **`BERT-large模型`**：24-layer, 1024-hidden, 16-heads, 330M parameters  
 * **`BERT-base模型`**：12-layer, 768-hidden, 12-heads, 110M parameters  
 
+**注意：开源版本不包含MLM任务的权重；如需做MLM任务，请使用额外数据进行二次预训练（和其他下游任务一样）。**
+
 | 模型简称 | 语料 | Google下载 | 百度网盘下载 |
 | :------- | :--------- | :---------: | :---------: |
 | **`RBT6, Chinese`** | **EXT数据<sup>[1]</sup>** | - | **[TensorFlow（密码hniy）](https://pan.baidu.com/s/1_MDAIYIGVgDovWkSs51NDA?pwd=hniy)** |
@@ -128,7 +130,7 @@ Yiming Cui, Wanxiang Che, Ting Liu, Bing Qin, Ziqing Yang, Shijin Wang, Guoping 
 
 2）或者通过huggingface官网直接下载PyTorch版权重：https://huggingface.co/hfl
 
-方法：点击任意需要下载的model → 拉到最下方点击"List all files in model" → 在弹出的小框中下载bin和json文件。
+下载方法：点击任意需要下载的模型 → 选择"Files and versions"选项卡 → 下载对应的模型文件。
 
 ### 使用说明
 
@@ -150,7 +152,7 @@ PyTorch版本则包含`pytorch_model.bin`, `bert_config.json`, `vocab.txt`文件
 ## 快速加载
 ### 使用Huggingface-Transformers
 
-依托于[Huggingface-Transformers 2.2.2](https://github.com/huggingface/transformers)，可轻松调用以上模型。
+依托于[🤗transformers库](https://github.com/huggingface/transformers)，可轻松调用以上模型。
 ```
 tokenizer = BertTokenizer.from_pretrained("MODEL_NAME")
 model = BertModel.from_pretrained("MODEL_NAME")
@@ -473,8 +475,8 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
 
 
 ## 引用
-如果本目录中的内容对你的研究工作有所帮助，欢迎在论文中引用下述论文。
-- 首选：https://ieeexplore.ieee.org/document/9599397
+如果本项目中的资源或技术对你的研究工作有所帮助，欢迎在论文中引用下述论文。
+- 首选（期刊扩充版）：https://ieeexplore.ieee.org/document/9599397
 ```
 @journal{cui-etal-2021-pretrain,
   title={Pre-Training with Whole Word Masking for Chinese BERT},
@@ -486,7 +488,7 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
  }
 ```
 
-- 或者：https://arxiv.org/abs/2004.13922
+- 或者（会议版本）：https://www.aclweb.org/anthology/2020.findings-emnlp.58
 ```
 @inproceedings{cui-etal-2020-revisiting,
     title = "Revisiting Pre-Trained Models for {C}hinese Natural Language Processing",
@@ -508,7 +510,7 @@ A: 我们集成了RoBERTa和BERT-wwm的优点，对两者进行了一个自然�
 
 
 ## 致谢
-第一作者部分受到[**谷歌TensorFlow Research Cloud**](https://www.tensorflow.org/tfrc)计划资助。
+第一作者部分受到[**谷歌TPU Research Cloud**](https://www.tensorflow.org/tfrc)计划资助。
 
 
 ## 免责声明
